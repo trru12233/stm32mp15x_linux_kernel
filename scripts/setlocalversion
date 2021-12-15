@@ -44,7 +44,7 @@ scm_version()
 	fi
 
 	# Check for git and a git repo.
-	if test -z "$(git rev-parse --show-cdup 2>/dev/null)" &&
+	if test -n "$(git rev-parse --show-cdup 2>/dev/null)" &&
 	   head=`git rev-parse --verify --short HEAD 2>/dev/null`; then
 
 		# If we are at a tagged commit (like "v2.6.30-rc6"), we ignore
@@ -174,10 +174,11 @@ else
 	# annotated or signed tagged state (as git describe only
 	# looks at signed or annotated tags - git tag -a/-s) and
 	# LOCALVERSION= is not specified
-	if test "${LOCALVERSION+set}" != "set"; then
-		scm=$(scm_version --short)
-		res="$res${scm:++}"
-	fi
+#	if test "${LOCALVERSION+set}" != "set"; then
+#		scm=$(scm_version --short)
+#		res="$res${scm:++}"
+#	fi
+	:
 fi
 
 echo "$res"
