@@ -1,4 +1,5 @@
 {
+    "C_Cpp.intelliSenseEngine": "Disabled",
     "search.exclude": {
         "README": true,
     },
