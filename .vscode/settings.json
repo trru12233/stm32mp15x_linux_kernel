@@ -1,5 +1,5 @@
 {
-    "C_Cpp.intelliSenseEngine": "Disabled",
+    // "C_Cpp.intelliSenseEngine": "Disabled",
     "search.exclude": {
         "README": true,
     },
@@ -56,7 +56,6 @@
         ".config": "makefile",
         "xj3_quick_defconfig": "makefile",
         "*_defconfig": "makefile",
-        "gc_hal.h": "c",
-        "drv_types.h": "c"
+        "*.h": "c"
     }
 }

@@ -3,14 +3,17 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/include",
+                "${workspaceFolder}/include/**",
+                "/home/users/ru.tang/stm32mp15x_ws/kernel/arch/arm/include"
             ],
             "defines": [
                 "__KERNEL__",
                 "__CHECKER__"
 
              ],
-             "compilerPath": "arm-none-linux-gnueabihf-gcc",
+            "compilerPath": "/home/users/ru.tang/gcc-arm-9.2-2019.12-x86_64-arm-none-linux-gnueabihf/bin/arm-none-linux-gnueabihf-gcc",
             "cStandard": "gnu11",
             "cppStandard": "gnu++14",
             "intelliSenseMode": "${default}"
