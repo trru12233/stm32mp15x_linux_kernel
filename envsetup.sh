@@ -39,4 +39,5 @@ export N=$(( ($(cat /proc/cpuinfo |grep 'processor'|wc -l)) ))
 export BUILD_OUTPUT_PATH=$(pwd)/out
 export TARGET_MODULES_PATH=${BUILD_OUTPUT_PATH}/_modules
 export TARGET_BOOT_PATH=${BUILD_OUTPUT_PATH}/_boot
-
+export TARGET_BOOT_EXT4_PATH=${BUILD_OUTPUT_PATH}/_boot_ext4
+export KERNEL_DEFCONFIG=stm32mp1_mmc_defconfig

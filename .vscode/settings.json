@@ -48,13 +48,13 @@
         "arch/arm/configs/s[u-z]*":true,
         "arch/arm/configs/stm32_defconfig":true,
         "arch/arm/configs/stm32mp1_atk_defconfig":true,
+
+        "init/":true,
+        "mm/":true,
     },
     "files.associations": {
         "*.S": "c",
-        "xj3_soc_defconfig": "makefile",
-        "xj3_perf_defconfig": "makefile",
         ".config": "makefile",
-        "xj3_quick_defconfig": "makefile",
         "*_defconfig": "makefile",
         "*.h": "c"
     }
