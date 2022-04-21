@@ -61,7 +61,6 @@ CONFIG_HANDLE_DOMAIN_IRQ=y
 CONFIG_IRQ_FORCED_THREADING=y
 CONFIG_SPARSE_IRQ=y
 # CONFIG_GENERIC_IRQ_DEBUGFS is not set
-# end of IRQ subsystem
 
 CONFIG_GENERIC_IRQ_MULTI_HANDLER=y
 CONFIG_ARCH_CLOCKSOURCE_DATA=y
@@ -80,7 +79,6 @@ CONFIG_NO_HZ_IDLE=y
 # CONFIG_NO_HZ_FULL is not set
 CONFIG_NO_HZ=y
 CONFIG_HIGH_RES_TIMERS=y
-# end of Timers subsystem
 
 # CONFIG_PREEMPT_NONE is not set
 # CONFIG_PREEMPT_VOLUNTARY is not set
@@ -100,7 +98,6 @@ CONFIG_TASK_DELAY_ACCT=y
 CONFIG_TASK_XACCT=y
 CONFIG_TASK_IO_ACCOUNTING=y
 # CONFIG_PSI is not set
-# end of CPU/Task time and stats accounting
 
 CONFIG_CPU_ISOLATION=y
 
@@ -114,7 +111,6 @@ CONFIG_TREE_SRCU=y
 CONFIG_TASKS_RCU=y
 CONFIG_RCU_STALL_COMMON=y
 CONFIG_RCU_NEED_SEGCBLIST=y
-# end of RCU Subsystem
 
 CONFIG_IKCONFIG=y
 CONFIG_IKCONFIG_PROC=y
@@ -128,7 +124,6 @@ CONFIG_GENERIC_SCHED_CLOCK=y
 # Scheduler features
 #
 # CONFIG_UCLAMP_TASK is not set
-# end of Scheduler features
 
 CONFIG_CGROUPS=y
 CONFIG_PAGE_COUNTER=y
@@ -218,7 +213,6 @@ CONFIG_PERF_USE_VMALLOC=y
 #
 CONFIG_PERF_EVENTS=y
 # CONFIG_DEBUG_PERF_USE_VMALLOC is not set
-# end of Kernel Performance Events And Counters
 
 CONFIG_VM_EVENT_COUNTERS=y
 CONFIG_SLUB_DEBUG=y
@@ -235,7 +229,6 @@ CONFIG_SLUB_CPU_PARTIAL=y
 CONFIG_SYSTEM_DATA_VERIFICATION=y
 CONFIG_PROFILING=y
 CONFIG_TRACEPOINTS=y
-# end of General setup
 
 CONFIG_ARM=y
 CONFIG_ARM_HAS_SG_CHAIN=y
@@ -281,7 +274,6 @@ CONFIG_ARCH_MULTIPLATFORM=y
 # CONFIG_ARCH_MULTI_V6 is not set
 CONFIG_ARCH_MULTI_V7=y
 CONFIG_ARCH_MULTI_V6_V7=y
-# end of Multiple platform selection
 
 # CONFIG_ARCH_VIRT is not set
 # CONFIG_ARCH_ACTIONS is not set
@@ -315,7 +307,6 @@ CONFIG_ARCH_MILBEAUT_M10V=y
 # CONFIG_SOC_AM33XX is not set
 # CONFIG_SOC_AM43XX is not set
 # CONFIG_SOC_DRA7XX is not set
-# end of TI OMAP/AM/DM/DRA Family
 
 # CONFIG_ARCH_SIRF is not set
 # CONFIG_ARCH_QCOM is not set
@@ -393,13 +384,11 @@ CONFIG_ARM_ERRATA_798181=y
 # CONFIG_ARM_ERRATA_852421 is not set
 # CONFIG_ARM_ERRATA_852423 is not set
 # CONFIG_ARM_ERRATA_857272 is not set
-# end of System Type
 
 #
 # Bus support
 #
 CONFIG_ARM_ERRATA_814220=y
-# end of Bus support
 
 #
 # Kernel Features
@@ -449,7 +438,6 @@ CONFIG_SECCOMP=y
 # CONFIG_PARAVIRT is not set
 # CONFIG_PARAVIRT_TIME_ACCOUNTING is not set
 # CONFIG_XEN is not set
-# end of Kernel Features
 
 #
 # Boot options
@@ -467,7 +455,11 @@ CONFIG_CMDLINE=""
 # CONFIG_CRASH_DUMP is not set
 CONFIG_AUTO_ZRELADDR=y
 # CONFIG_EFI is not set
-# end of Boot options
+
+#
+# Quick Boot
+#
+# CONFIG_MMC_QUICK_BOOT is not set
 
 #
 # CPU Power Management
@@ -502,14 +494,11 @@ CONFIG_CPUFREQ_DT_PLATDEV=y
 # CONFIG_ARM_SCMI_CPUFREQ is not set
 CONFIG_ARM_STM32_CPUFREQ=y
 CONFIG_QORIQ_CPUFREQ=y
-# end of CPU Frequency scaling
 
 #
 # CPU Idle
 #
 # CONFIG_CPU_IDLE is not set
-# end of CPU Idle
-# end of CPU Power Management
 
 #
 # Floating point emulation
@@ -522,7 +511,6 @@ CONFIG_VFP=y
 CONFIG_VFPv3=y
 CONFIG_NEON=y
 CONFIG_KERNEL_MODE_NEON=y
-# end of Floating point emulation
 
 #
 # Power management options
@@ -548,7 +536,6 @@ CONFIG_CPU_PM=y
 CONFIG_ARCH_SUSPEND_POSSIBLE=y
 CONFIG_ARM_CPU_SUSPEND=y
 CONFIG_ARCH_HIBERNATION_POSSIBLE=y
-# end of Power management options
 
 #
 # Firmware Drivers
@@ -566,8 +553,6 @@ CONFIG_ARM_PSCI_FW=y
 #
 # Tegra firmware driver
 #
-# end of Tegra firmware driver
-# end of Firmware Drivers
 
 CONFIG_ARM_CRYPTO=y
 CONFIG_CRYPTO_SHA1_ARM=m
@@ -653,11 +638,9 @@ CONFIG_REFCOUNT_FULL=y
 #
 # CONFIG_GCOV_KERNEL is not set
 CONFIG_ARCH_HAS_GCOV_PROFILE_ALL=y
-# end of GCOV-based kernel profiling
 
 CONFIG_PLUGIN_HOSTCC=""
 CONFIG_HAVE_GCC_PLUGINS=y
-# end of General architecture-dependent options
 
 CONFIG_RT_MUTEXES=y
 CONFIG_BASE_SMALL=0
@@ -719,7 +702,6 @@ CONFIG_MSDOS_PARTITION=y
 CONFIG_EFI_PARTITION=y
 # CONFIG_SYSV68_PARTITION is not set
 CONFIG_CMDLINE_PARTITION=y
-# end of Partition Types
 
 CONFIG_BLK_MQ_VIRTIO=y
 CONFIG_BLK_PM=y
@@ -730,7 +712,6 @@ CONFIG_BLK_PM=y
 CONFIG_MQ_IOSCHED_DEADLINE=y
 CONFIG_MQ_IOSCHED_KYBER=y
 # CONFIG_IOSCHED_BFQ is not set
-# end of IO Schedulers
 
 CONFIG_ASN1=y
 CONFIG_UNINLINE_SPIN_UNLOCK=y
@@ -753,7 +734,6 @@ CONFIG_ARCH_HAS_BINFMT_FLAT=y
 CONFIG_BINFMT_FLAT_ARGVP_ENVP_ON_STACK=y
 # CONFIG_BINFMT_MISC is not set
 CONFIG_COREDUMP=y
-# end of Executable file formats
 
 #
 # Memory Management options
@@ -783,7 +763,6 @@ CONFIG_GENERIC_EARLY_IOREMAP=y
 CONFIG_FRAME_VECTOR=y
 # CONFIG_PERCPU_STATS is not set
 # CONFIG_GUP_BENCHMARK is not set
-# end of Memory Management options
 
 CONFIG_NET=y
 CONFIG_NET_INGRESS=y
@@ -1067,7 +1046,6 @@ CONFIG_NETFILTER_XT_MATCH_STRING=m
 CONFIG_NETFILTER_XT_MATCH_TCPMSS=m
 CONFIG_NETFILTER_XT_MATCH_TIME=m
 CONFIG_NETFILTER_XT_MATCH_U32=m
-# end of Core Netfilter Configuration
 
 CONFIG_IP_SET=m
 CONFIG_IP_SET_MAX=256
@@ -1168,7 +1146,6 @@ CONFIG_IP_NF_RAW=m
 CONFIG_IP_NF_ARPTABLES=m
 CONFIG_IP_NF_ARPFILTER=m
 CONFIG_IP_NF_ARP_MANGLE=m
-# end of IP: Netfilter Configuration
 
 #
 # IPv6: Netfilter Configuration
@@ -1199,7 +1176,6 @@ CONFIG_IP6_NF_RAW=m
 CONFIG_IP6_NF_NAT=m
 CONFIG_IP6_NF_TARGET_MASQUERADE=m
 CONFIG_IP6_NF_TARGET_NPT=m
-# end of IPv6: Netfilter Configuration
 
 CONFIG_NF_DEFRAG_IPV6=m
 CONFIG_NF_TABLES_BRIDGE=m
@@ -1427,8 +1403,6 @@ CONFIG_NET_FLOW_LIMIT=y
 #
 # CONFIG_NET_PKTGEN is not set
 CONFIG_NET_DROP_MONITOR=y
-# end of Network testing
-# end of Networking options
 
 # CONFIG_HAMRADIO is not set
 CONFIG_CAN=y
@@ -1464,7 +1438,6 @@ CONFIG_CAN_M_CAN_PLATFORM=y
 #
 # CONFIG_CAN_HI311X is not set
 # CONFIG_CAN_MCP251X is not set
-# end of CAN SPI interfaces
 
 #
 # CAN USB interfaces
@@ -1477,10 +1450,8 @@ CONFIG_CAN_M_CAN_PLATFORM=y
 # CONFIG_CAN_MCBA_USB is not set
 # CONFIG_CAN_PEAK_USB is not set
 # CONFIG_CAN_UCAN is not set
-# end of CAN USB interfaces
 
 # CONFIG_CAN_DEBUG_DEVICES is not set
-# end of CAN Device Drivers
 
 CONFIG_BT=y
 CONFIG_BT_BREDR=y
@@ -1530,7 +1501,6 @@ CONFIG_BT_MRVL_SDIO=m
 # CONFIG_BT_ATH3K is not set
 # CONFIG_BT_MTKSDIO is not set
 # CONFIG_BT_MTKUART is not set
-# end of Bluetooth device drivers
 
 # CONFIG_AF_RXRPC is not set
 # CONFIG_AF_KCM is not set
@@ -1605,7 +1575,6 @@ CONFIG_FW_LOADER=y
 CONFIG_EXTRA_FIRMWARE=""
 # CONFIG_FW_LOADER_USER_HELPER is not set
 # CONFIG_FW_LOADER_COMPRESS is not set
-# end of Firmware loader
 
 CONFIG_WANT_DEV_COREDUMP=y
 CONFIG_ALLOW_DEV_COREDUMP=y
@@ -1623,7 +1592,6 @@ CONFIG_REGMAP_IRQ=y
 CONFIG_DMA_SHARED_BUFFER=y
 # CONFIG_DMA_FENCE_TRACE is not set
 CONFIG_GENERIC_ARCH_TOPOLOGY=y
-# end of Generic Driver Options
 
 #
 # Bus devices
@@ -1632,7 +1600,6 @@ CONFIG_BRCMSTB_GISB_ARB=y
 # CONFIG_MOXTET is not set
 CONFIG_SIMPLE_PM_BUS=y
 CONFIG_VEXPRESS_CONFIG=y
-# end of Bus devices
 
 # CONFIG_CONNECTOR is not set
 # CONFIG_GNSS is not set
@@ -1647,7 +1614,6 @@ CONFIG_MTD_CMDLINE_PARTS=y
 CONFIG_MTD_OF_PARTS=y
 # CONFIG_MTD_AFS_PARTS is not set
 # CONFIG_MTD_REDBOOT_PARTS is not set
-# end of Partition parsers
 
 #
 # User Modules And Translation Layers
@@ -1683,7 +1649,6 @@ CONFIG_MTD_CFI_UTIL=y
 # CONFIG_MTD_RAM is not set
 # CONFIG_MTD_ROM is not set
 # CONFIG_MTD_ABSENT is not set
-# end of RAM/ROM/Flash chip drivers
 
 #
 # Mapping drivers for chip access
@@ -1695,7 +1660,6 @@ CONFIG_MTD_PHYSMAP_OF=y
 # CONFIG_MTD_PHYSMAP_VERSATILE is not set
 # CONFIG_MTD_PHYSMAP_GEMINI is not set
 # CONFIG_MTD_PLATRAM is not set
-# end of Mapping drivers for chip access
 
 #
 # Self-contained MTD device drivers
@@ -1713,7 +1677,6 @@ CONFIG_MTD_PHYSMAP_OF=y
 # Disk-On-Chip Device Drivers
 #
 # CONFIG_MTD_DOCG3 is not set
-# end of Self-contained MTD device drivers
 
 CONFIG_MTD_NAND_CORE=y
 # CONFIG_MTD_ONENAND is not set
@@ -1745,7 +1708,6 @@ CONFIG_MTD_SPI_NAND=y
 #
 # CONFIG_MTD_LPDDR is not set
 # CONFIG_MTD_LPDDR2_NVM is not set
-# end of LPDDR & LPDDR2 PCM memory drivers
 
 CONFIG_MTD_SPI_NOR=y
 # CONFIG_MTD_SPI_NOR_USE_4K_SECTORS is not set
@@ -1797,7 +1759,6 @@ CONFIG_VIRTIO_BLK=y
 #
 # CONFIG_NVME_FC is not set
 # CONFIG_NVME_TARGET is not set
-# end of NVME Support
 
 #
 # Misc devices
@@ -1835,13 +1796,11 @@ CONFIG_EEPROM_93CX6=y
 # CONFIG_EEPROM_93XX46 is not set
 # CONFIG_EEPROM_IDT_89HPESX is not set
 # CONFIG_EEPROM_EE1004 is not set
-# end of EEPROM support
 
 #
 # Texas Instruments shared transport line discipline
 #
 # CONFIG_TI_ST is not set
-# end of Texas Instruments shared transport line discipline
 
 # CONFIG_SENSORS_LIS3_SPI is not set
 # CONFIG_SENSORS_LIS3_I2C is not set
@@ -1883,11 +1842,9 @@ CONFIG_EEPROM_93CX6=y
 #
 # VOP Driver
 #
-# end of Intel MIC & related support
 
 # CONFIG_ECHO is not set
 # CONFIG_MISC_RTSX_USB is not set
-# end of Misc devices
 
 #
 # SCSI device support
@@ -1920,7 +1877,6 @@ CONFIG_CHR_DEV_SG=y
 # CONFIG_SCSI_SAS_ATTRS is not set
 # CONFIG_SCSI_SAS_LIBSAS is not set
 # CONFIG_SCSI_SRP_ATTRS is not set
-# end of SCSI Transports
 
 CONFIG_SCSI_LOWLEVEL=y
 # CONFIG_ISCSI_TCP is not set
@@ -1929,7 +1885,6 @@ CONFIG_SCSI_LOWLEVEL=y
 # CONFIG_SCSI_DEBUG is not set
 # CONFIG_SCSI_VIRTIO is not set
 # CONFIG_SCSI_DH is not set
-# end of SCSI device support
 
 CONFIG_ATA=y
 CONFIG_ATA_VERBOSE_ERROR=y
@@ -2018,7 +1973,6 @@ CONFIG_NET_DSA_BCM_SF2=m
 # CONFIG_NET_DSA_SMSC_LAN9303_MDIO is not set
 # CONFIG_NET_DSA_VITESSE_VSC73XX_SPI is not set
 # CONFIG_NET_DSA_VITESSE_VSC73XX_PLATFORM is not set
-# end of Distributed Switch Architecture drivers
 
 CONFIG_ETHERNET=y
 CONFIG_NET_VENDOR_ALACRITECH=y
@@ -2538,8 +2492,6 @@ CONFIG_SERIO_LIBPS2=y
 # CONFIG_SERIO_GPIO_PS2 is not set
 # CONFIG_USERIO is not set
 # CONFIG_GAMEPORT is not set
-# end of Hardware I/O ports
-# end of Input device support
 
 #
 # Character devices
@@ -2599,7 +2551,6 @@ CONFIG_SERIAL_STM32_CONSOLE=y
 CONFIG_SERIAL_MILBEAUT_USIO=y
 CONFIG_SERIAL_MILBEAUT_USIO_PORTS=4
 CONFIG_SERIAL_MILBEAUT_USIO_CONSOLE=y
-# end of Serial drivers
 
 CONFIG_SERIAL_DEV_BUS=y
 CONFIG_SERIAL_DEV_CTRL_TTYPORT=y
@@ -2634,7 +2585,6 @@ CONFIG_TCG_TIS_I2C_INFINEON=m
 # CONFIG_TCG_TIS_ST33ZP24_I2C is not set
 # CONFIG_TCG_TIS_ST33ZP24_SPI is not set
 # CONFIG_XILLYBUS is not set
-# end of Character devices
 
 # CONFIG_RANDOM_TRUST_BOOTLOADER is not set
 
@@ -2660,7 +2610,6 @@ CONFIG_I2C_MUX_PINCTRL=y
 # CONFIG_I2C_MUX_REG is not set
 CONFIG_I2C_DEMUX_PINCTRL=y
 # CONFIG_I2C_MUX_MLXCPLD is not set
-# end of Multiplexer I2C Chip support
 
 CONFIG_I2C_HELPER_AUTO=y
 CONFIG_I2C_SMBUS=y
@@ -2700,7 +2649,6 @@ CONFIG_I2C_STM32F7=y
 # Other I2C/SMBus bus drivers
 #
 CONFIG_I2C_CROS_EC_TUNNEL=m
-# end of I2C Hardware Bus support
 
 # CONFIG_I2C_STUB is not set
 CONFIG_I2C_SLAVE=y
@@ -2708,7 +2656,6 @@ CONFIG_I2C_SLAVE=y
 # CONFIG_I2C_DEBUG_CORE is not set
 # CONFIG_I2C_DEBUG_ALGO is not set
 # CONFIG_I2C_DEBUG_BUS is not set
-# end of I2C support
 
 # CONFIG_I3C is not set
 CONFIG_SPI=y
@@ -2767,7 +2714,6 @@ CONFIG_PPS=y
 #
 CONFIG_PTP_1588_CLOCK=y
 # CONFIG_DP83640_PHY is not set
-# end of PTP clock support
 
 CONFIG_PINCTRL=y
 CONFIG_GENERIC_PINCTRL_GROUPS=y
@@ -2819,7 +2765,6 @@ CONFIG_GPIO_SYSCON=y
 CONFIG_GPIO_XILINX=y
 # CONFIG_GPIO_ZEVIO is not set
 # CONFIG_GPIO_AMD_FCH is not set
-# end of Memory mapped GPIO drivers
 
 #
 # I2C GPIO expanders
@@ -2832,7 +2777,6 @@ CONFIG_GPIO_XILINX=y
 # CONFIG_GPIO_PCA953X is not set
 # CONFIG_GPIO_PCF857X is not set
 # CONFIG_GPIO_TPIC2810 is not set
-# end of I2C GPIO expanders
 
 #
 # MFD GPIO expanders
@@ -2845,7 +2789,6 @@ CONFIG_GPIO_TPS6586X=y
 CONFIG_GPIO_TPS65910=y
 CONFIG_GPIO_TWL4030=y
 # CONFIG_GPIO_WM8994 is not set
-# end of MFD GPIO expanders
 
 #
 # SPI GPIO expanders
@@ -2856,12 +2799,10 @@ CONFIG_GPIO_TWL4030=y
 # CONFIG_GPIO_MC33880 is not set
 # CONFIG_GPIO_PISOSR is not set
 # CONFIG_GPIO_XRA1403 is not set
-# end of SPI GPIO expanders
 
 #
 # USB GPIO expanders
 #
-# end of USB GPIO expanders
 
 # CONFIG_GPIO_MOCKUP is not set
 # CONFIG_W1 is not set
@@ -3089,7 +3030,6 @@ CONFIG_ST_THERMAL=y
 # CONFIG_ST_THERMAL_SYSCFG is not set
 CONFIG_ST_THERMAL_MEMMAP=y
 CONFIG_STM32_THERMAL=y
-# end of STMicroelectronics thermal drivers
 
 # CONFIG_GENERIC_ADC_THERMAL is not set
 CONFIG_WATCHDOG=y
@@ -3209,7 +3149,6 @@ CONFIG_MFD_STMPE=y
 #
 CONFIG_STMPE_I2C=y
 # CONFIG_STMPE_SPI is not set
-# end of STMicroelectronics STMPE Interface Drivers
 
 CONFIG_MFD_SYSCON=y
 # CONFIG_MFD_TI_AM335X_TSCADC is not set
@@ -3259,7 +3198,6 @@ CONFIG_MFD_STM32MP1_PWR=y
 CONFIG_MFD_STMFX=y
 CONFIG_MFD_VEXPRESS_SYSREG=y
 # CONFIG_RAVE_SP_CORE is not set
-# end of Multifunction device drivers
 
 CONFIG_REGULATOR=y
 # CONFIG_REGULATOR_DEBUG is not set
@@ -3634,18 +3572,15 @@ CONFIG_VIDEO_OV5640=m
 # CONFIG_VIDEO_M52790 is not set
 # CONFIG_VIDEO_I2C is not set
 CONFIG_VIDEO_ST_MIPID02=m
-# end of I2C Encoders, decoders, sensors and other helper chips
 
 #
 # SPI helper chips
 #
 # CONFIG_VIDEO_GS1662 is not set
-# end of SPI helper chips
 
 #
 # Media SPI Adapters
 #
-# end of Media SPI Adapters
 
 #
 # Customise DVB Frontends
@@ -3654,7 +3589,6 @@ CONFIG_VIDEO_ST_MIPID02=m
 #
 # Tools to develop new frontends
 #
-# end of Customise DVB Frontends
 
 #
 # Graphics support
@@ -3685,7 +3619,6 @@ CONFIG_DRM_SCHED=m
 # CONFIG_DRM_I2C_SIL164 is not set
 # CONFIG_DRM_I2C_NXP_TDA998X is not set
 # CONFIG_DRM_I2C_NXP_TDA9950 is not set
-# end of I2C encoder or helper chips
 
 #
 # ARM devices
@@ -3693,12 +3626,10 @@ CONFIG_DRM_SCHED=m
 # CONFIG_DRM_HDLCD is not set
 # CONFIG_DRM_MALI_DISPLAY is not set
 # CONFIG_DRM_KOMEDA is not set
-# end of ARM devices
 
 #
 # ACP (Audio CoProcessor) Configuration
 #
-# end of ACP (Audio CoProcessor) Configuration
 
 # CONFIG_DRM_VGEM is not set
 # CONFIG_DRM_VKMS is not set
@@ -3784,7 +3715,6 @@ CONFIG_DRM_PANEL_SAMSUNG_S6E8AA0=m
 # CONFIG_DRM_PANEL_TPO_TD043MTEA1 is not set
 # CONFIG_DRM_PANEL_TPO_TPG110 is not set
 # CONFIG_DRM_PANEL_TRULY_NT35597_WQXGA is not set
-# end of Display Panels
 
 CONFIG_DRM_BRIDGE=y
 CONFIG_DRM_PANEL_BRIDGE=y
@@ -3813,7 +3743,6 @@ CONFIG_DRM_I2C_ADV7511_AUDIO=y
 CONFIG_DRM_I2C_ADV7533=y
 CONFIG_DRM_I2C_ADV7511_CEC=y
 CONFIG_DRM_DW_MIPI_DSI=y
-# end of Display Interface Bridges
 
 CONFIG_DRM_STI=m
 CONFIG_DRM_ETNAVIV=m
@@ -3872,7 +3801,6 @@ CONFIG_FB_ARMCLCD=y
 # CONFIG_FB_METRONOME is not set
 CONFIG_FB_SIMPLE=y
 # CONFIG_FB_SSD1307 is not set
-# end of Frame buffer Devices
 
 #
 # Backlight & LCD device support
@@ -3894,7 +3822,6 @@ CONFIG_BACKLIGHT_GPIO=y
 # CONFIG_BACKLIGHT_LV5207LP is not set
 # CONFIG_BACKLIGHT_BD6107 is not set
 # CONFIG_BACKLIGHT_ARCXCNN is not set
-# end of Backlight & LCD device support
 
 CONFIG_VIDEOMODE_HELPERS=y
 CONFIG_HDMI=y
@@ -3907,13 +3834,11 @@ CONFIG_FRAMEBUFFER_CONSOLE=y
 CONFIG_FRAMEBUFFER_CONSOLE_DETECT_PRIMARY=y
 CONFIG_FRAMEBUFFER_CONSOLE_ROTATION=y
 # CONFIG_FRAMEBUFFER_CONSOLE_DEFERRED_TAKEOVER is not set
-# end of Console display driver support
 
 CONFIG_LOGO=y
 CONFIG_LOGO_LINUX_MONO=y
 CONFIG_LOGO_LINUX_VGA16=y
 CONFIG_LOGO_LINUX_CLUT224=y
-# end of Graphics support
 
 CONFIG_SOUND=y
 CONFIG_SND=y
@@ -3947,7 +3872,6 @@ CONFIG_SND_DRIVERS=y
 #
 # HD-Audio
 #
-# end of HD-Audio
 
 CONFIG_SND_HDA_PREALLOC_SIZE=64
 CONFIG_SND_ARM=y
@@ -3987,7 +3911,6 @@ CONFIG_SND_SOC_FSL_SAI=m
 # CONFIG_SND_SOC_FSL_ESAI is not set
 # CONFIG_SND_SOC_FSL_MICFIL is not set
 # CONFIG_SND_SOC_IMX_AUDMUX is not set
-# end of SoC Audio for Freescale CPUs
 
 # CONFIG_SND_I2S_HI6210_I2S is not set
 # CONFIG_SND_SOC_IMG is not set
@@ -4001,7 +3924,6 @@ CONFIG_SND_SOC_STM32_SAI=y
 CONFIG_SND_SOC_STM32_I2S=y
 CONFIG_SND_SOC_STM32_SPDIFRX=y
 CONFIG_SND_SOC_STM32_DFSDM=y
-# end of STMicroelectronics STM32 SOC audio support
 
 # CONFIG_SND_SOC_XILINX_I2S is not set
 # CONFIG_SND_SOC_XILINX_AUDIO_FORMATTER is not set
@@ -4147,7 +4069,6 @@ CONFIG_SND_SOC_WM8960=y
 # CONFIG_SND_SOC_NAU8822 is not set
 # CONFIG_SND_SOC_NAU8824 is not set
 # CONFIG_SND_SOC_TPA6130A2 is not set
-# end of CODEC drivers
 
 CONFIG_SND_SIMPLE_CARD_UTILS=y
 CONFIG_SND_SIMPLE_CARD=m
@@ -4251,7 +4172,6 @@ CONFIG_HID_GENERIC=y
 # CONFIG_HID_ZYDACRON is not set
 # CONFIG_HID_SENSOR_HUB is not set
 # CONFIG_HID_ALPS is not set
-# end of Special HID drivers
 
 #
 # USB HID support
@@ -4259,14 +4179,11 @@ CONFIG_HID_GENERIC=y
 CONFIG_USB_HID=y
 # CONFIG_HID_PID is not set
 # CONFIG_USB_HIDDEV is not set
-# end of USB HID support
 
 #
 # I2C HID support
 #
 # CONFIG_I2C_HID is not set
-# end of I2C HID support
-# end of HID support
 
 CONFIG_USB_OHCI_LITTLE_ENDIAN=y
 CONFIG_USB_SUPPORT=y
@@ -4483,7 +4400,6 @@ CONFIG_USB_GPIO_VBUS=y
 CONFIG_USB_ISP1301=y
 CONFIG_USB_ULPI=y
 CONFIG_USB_ULPI_VIEWPORT=y
-# end of USB Physical Layer drivers
 
 CONFIG_USB_GADGET=y
 # CONFIG_USB_GADGET_DEBUG is not set
@@ -4515,7 +4431,6 @@ CONFIG_USB_BDC_UDC=y
 # CONFIG_USB_GADGET_XILINX is not set
 CONFIG_USB_ASPEED_VHUB=m
 # CONFIG_USB_DUMMY_HCD is not set
-# end of USB Peripheral Controller
 
 CONFIG_USB_LIBCOMPOSITE=y
 CONFIG_USB_F_ACM=y
@@ -4588,13 +4503,11 @@ CONFIG_TYPEC_STUSB=y
 # USB Type-C Multiplexer/DeMultiplexer Switch support
 #
 # CONFIG_TYPEC_MUX_PI3USB30532 is not set
-# end of USB Type-C Multiplexer/DeMultiplexer Switch support
 
 #
 # USB Type-C Alternate Mode drivers
 #
 # CONFIG_TYPEC_DP_ALTMODE is not set
-# end of USB Type-C Alternate Mode drivers
 
 CONFIG_USB_ROLE_SWITCH=y
 CONFIG_MMC=y
@@ -4890,7 +4803,6 @@ CONFIG_SYNC_FILE=y
 # CONFIG_SW_SYNC is not set
 # CONFIG_UDMABUF is not set
 # CONFIG_DMABUF_SELFTESTS is not set
-# end of DMABUF options
 
 # CONFIG_AUXDISPLAY is not set
 # CONFIG_UIO is not set
@@ -4905,7 +4817,6 @@ CONFIG_VIRTIO_MMIO=y
 #
 # Microsoft Hyper-V guest support
 #
-# end of Microsoft Hyper-V guest support
 
 # CONFIG_GREYBUS is not set
 # CONFIG_STAGING is not set
@@ -4951,7 +4862,6 @@ CONFIG_CLK_QORIQ=y
 # CONFIG_COMMON_CLK_VC5 is not set
 CONFIG_COMMON_CLK_STM32MP157=y
 # CONFIG_COMMON_CLK_FIXED_MMIO is not set
-# end of Common Clock Framework
 
 CONFIG_HWSPINLOCK=y
 CONFIG_HWSPINLOCK_STM32=y
@@ -4967,7 +4877,6 @@ CONFIG_ARM_ARCH_TIMER=y
 CONFIG_ARM_ARCH_TIMER_EVTSTREAM=y
 CONFIG_CLKSRC_VERSATILE=y
 CONFIG_MILBEAUT_TIMER=y
-# end of Clock Source drivers
 
 CONFIG_MAILBOX=y
 # CONFIG_ARM_MHU is not set
@@ -4986,7 +4895,6 @@ CONFIG_IOMMU_IO_PGTABLE=y
 CONFIG_IOMMU_IO_PGTABLE_LPAE=y
 # CONFIG_IOMMU_IO_PGTABLE_LPAE_SELFTEST is not set
 # CONFIG_IOMMU_IO_PGTABLE_ARMV7S is not set
-# end of Generic IOMMU Pagetable Support
 
 # CONFIG_IOMMU_DEBUGFS is not set
 # CONFIG_ARM_SMMU is not set
@@ -4998,7 +4906,6 @@ CONFIG_REMOTEPROC=y
 CONFIG_REMOTEPROC_SRM_CORE=y
 CONFIG_REMOTEPROC_SRM_DEV=y
 CONFIG_STM32_RPROC=y
-# end of Remoteproc drivers
 
 #
 # Rpmsg drivers
@@ -5008,7 +4915,6 @@ CONFIG_RPMSG=y
 # CONFIG_RPMSG_QCOM_GLINK_RPM is not set
 CONFIG_RPMSG_VIRTIO=y
 CONFIG_RPMSG_TTY=y
-# end of Rpmsg drivers
 
 # CONFIG_SOUNDWIRE is not set
 
@@ -5019,7 +4925,6 @@ CONFIG_RPMSG_TTY=y
 #
 # Amlogic SoC drivers
 #
-# end of Amlogic SoC drivers
 
 #
 # Aspeed SoC drivers
@@ -5028,28 +4933,23 @@ CONFIG_SOC_ASPEED=y
 CONFIG_ASPEED_LPC_CTRL=m
 CONFIG_ASPEED_LPC_SNOOP=m
 CONFIG_ASPEED_P2A_CTRL=m
-# end of Aspeed SoC drivers
 
 #
 # Broadcom SoC drivers
 #
 # CONFIG_SOC_BRCMSTB is not set
-# end of Broadcom SoC drivers
 
 #
 # NXP/Freescale QorIQ SoC drivers
 #
-# end of NXP/Freescale QorIQ SoC drivers
 
 #
 # i.MX SoC drivers
 #
-# end of i.MX SoC drivers
 
 #
 # Qualcomm SoC drivers
 #
-# end of Qualcomm SoC drivers
 
 # CONFIG_STM32_HDP is not set
 CONFIG_STM32_PM_DOMAINS=y
@@ -5059,8 +4959,6 @@ CONFIG_STM32_PM_DOMAINS=y
 # Xilinx SoC drivers
 #
 # CONFIG_XILINX_VCU is not set
-# end of Xilinx SoC drivers
-# end of SOC (System On Chip) specific Drivers
 
 CONFIG_PM_DEVFREQ=y
 
@@ -5139,7 +5037,6 @@ CONFIG_IIO_SW_TRIGGER=y
 # CONFIG_SCA3000 is not set
 # CONFIG_STK8312 is not set
 # CONFIG_STK8BA50 is not set
-# end of Accelerometers
 
 #
 # Analog to digital converters
@@ -5209,19 +5106,16 @@ CONFIG_STM32_DFSDM_ADC=y
 # CONFIG_TWL6030_GPADC is not set
 CONFIG_VF610_ADC=m
 CONFIG_XILINX_XADC=y
-# end of Analog to digital converters
 
 #
 # Analog Front Ends
 #
 # CONFIG_IIO_RESCALE is not set
-# end of Analog Front Ends
 
 #
 # Amplifiers
 #
 # CONFIG_AD8366 is not set
-# end of Amplifiers
 
 #
 # Chemical Sensors
@@ -5234,7 +5128,6 @@ CONFIG_XILINX_XADC=y
 # CONFIG_SENSIRION_SGP30 is not set
 # CONFIG_SPS30 is not set
 # CONFIG_VZ89X is not set
-# end of Chemical Sensors
 
 CONFIG_IIO_CROS_EC_SENSORS_CORE=m
 CONFIG_IIO_CROS_EC_SENSORS=m
@@ -5243,13 +5136,11 @@ CONFIG_IIO_CROS_EC_SENSORS=m
 #
 # Hid Sensor IIO Common
 #
-# end of Hid Sensor IIO Common
 
 #
 # SSP Sensor Common
 #
 # CONFIG_IIO_SSP_SENSORHUB is not set
-# end of SSP Sensor Common
 
 CONFIG_IIO_ST_SENSORS_I2C=m
 CONFIG_IIO_ST_SENSORS_SPI=m
@@ -5293,12 +5184,10 @@ CONFIG_STM32_DAC_CORE=y
 # CONFIG_TI_DAC7311 is not set
 # CONFIG_TI_DAC7612 is not set
 # CONFIG_VF610_DAC is not set
-# end of Digital to analog converters
 
 #
 # IIO dummy driver
 #
-# end of IIO dummy driver
 
 #
 # Frequency Synthesizers DDS/PLL
@@ -5308,15 +5197,12 @@ CONFIG_STM32_DAC_CORE=y
 # Clock Generator/Distribution
 #
 # CONFIG_AD9523 is not set
-# end of Clock Generator/Distribution
 
 #
 # Phase-Locked Loop (PLL) frequency synthesizers
 #
 # CONFIG_ADF4350 is not set
 # CONFIG_ADF4371 is not set
-# end of Phase-Locked Loop (PLL) frequency synthesizers
-# end of Frequency Synthesizers DDS/PLL
 
 #
 # Digital gyroscope sensors
@@ -5332,7 +5218,6 @@ CONFIG_MPU3050=y
 CONFIG_MPU3050_I2C=y
 # CONFIG_IIO_ST_GYRO_3AXIS is not set
 # CONFIG_ITG3200 is not set
-# end of Digital gyroscope sensors
 
 #
 # Health Sensors
@@ -5345,8 +5230,6 @@ CONFIG_MPU3050_I2C=y
 # CONFIG_AFE4404 is not set
 # CONFIG_MAX30100 is not set
 # CONFIG_MAX30102 is not set
-# end of Heart Rate Monitors
-# end of Health Sensors
 
 #
 # Humidity sensors
@@ -5360,7 +5243,6 @@ CONFIG_HTS221_SPI=y
 # CONFIG_HTU21 is not set
 # CONFIG_SI7005 is not set
 # CONFIG_SI7020 is not set
-# end of Humidity sensors
 
 #
 # Inertial measurement units
@@ -5376,7 +5258,6 @@ CONFIG_HTS221_SPI=y
 CONFIG_IIO_ST_LSM6DSX=m
 CONFIG_IIO_ST_LSM6DSX_I2C=m
 CONFIG_IIO_ST_LSM6DSX_SPI=m
-# end of Inertial measurement units
 
 #
 # Light sensors
@@ -5422,7 +5303,6 @@ CONFIG_SENSORS_ISL29028=y
 # CONFIG_VEML6070 is not set
 # CONFIG_VL6180 is not set
 # CONFIG_ZOPT2201 is not set
-# end of Light sensors
 
 #
 # Magnetometer sensors
@@ -5439,18 +5319,15 @@ CONFIG_AK8975=y
 # CONFIG_SENSORS_HMC5843_SPI is not set
 # CONFIG_SENSORS_RM3100_I2C is not set
 # CONFIG_SENSORS_RM3100_SPI is not set
-# end of Magnetometer sensors
 
 #
 # Multiplexers
 #
 # CONFIG_IIO_MUX is not set
-# end of Multiplexers
 
 #
 # Inclinometer sensors
 #
-# end of Inclinometer sensors
 
 #
 # Triggers - standalone
@@ -5461,7 +5338,6 @@ CONFIG_IIO_STM32_LPTIMER_TRIGGER=y
 CONFIG_IIO_STM32_TIMER_TRIGGER=y
 # CONFIG_IIO_TIGHTLOOP_TRIGGER is not set
 # CONFIG_IIO_SYSFS_TRIGGER is not set
-# end of Triggers - standalone
 
 #
 # Digital potentiometers
@@ -5476,13 +5352,11 @@ CONFIG_IIO_STM32_TIMER_TRIGGER=y
 # CONFIG_MCP4531 is not set
 # CONFIG_MCP41010 is not set
 # CONFIG_TPL0102 is not set
-# end of Digital potentiometers
 
 #
 # Digital potentiostats
 #
 # CONFIG_LMP91000 is not set
-# end of Digital potentiostats
 
 #
 # Pressure sensors
@@ -5503,13 +5377,11 @@ CONFIG_IIO_ST_PRESS_SPI=m
 # CONFIG_T5403 is not set
 # CONFIG_HP206C is not set
 # CONFIG_ZPA2326 is not set
-# end of Pressure sensors
 
 #
 # Lightning sensors
 #
 # CONFIG_AS3935 is not set
-# end of Lightning sensors
 
 #
 # Proximity and distance sensors
@@ -5522,14 +5394,12 @@ CONFIG_IIO_ST_PRESS_SPI=m
 # CONFIG_SX9500 is not set
 # CONFIG_SRF08 is not set
 # CONFIG_VL53L0X_I2C is not set
-# end of Proximity and distance sensors
 
 #
 # Resolver to digital converters
 #
 # CONFIG_AD2S90 is not set
 # CONFIG_AD2S1200 is not set
-# end of Resolver to digital converters
 
 #
 # Temperature sensors
@@ -5542,7 +5412,6 @@ CONFIG_IIO_ST_PRESS_SPI=m
 # CONFIG_TSYS01 is not set
 # CONFIG_TSYS02D is not set
 # CONFIG_MAX31856 is not set
-# end of Temperature sensors
 
 CONFIG_PWM=y
 CONFIG_PWM_SYSFS=y
@@ -5564,7 +5433,6 @@ CONFIG_ARM_GIC=y
 CONFIG_ARM_GIC_MAX_NR=1
 # CONFIG_AL_FIC is not set
 CONFIG_STM32_EXTI=y
-# end of IRQ chip support
 
 # CONFIG_IPACK_BUS is not set
 CONFIG_ARCH_HAS_RESET_CONTROLLER=y
@@ -5594,7 +5462,6 @@ CONFIG_PHY_CPCAP_USB=m
 CONFIG_PHY_SAMSUNG_USB2=m
 CONFIG_PHY_STM32_USBPHYC=y
 # CONFIG_PHY_TUSB1210 is not set
-# end of PHY Subsystem
 
 # CONFIG_POWERCAP is not set
 # CONFIG_MCB is not set
@@ -5606,7 +5473,6 @@ CONFIG_PHY_STM32_USBPHYC=y
 # CONFIG_ARM_CCN is not set
 CONFIG_ARM_PMU=y
 CONFIG_STM32_DDR_PMU=y
-# end of Performance monitor support
 
 CONFIG_RAS=y
 
@@ -5614,7 +5480,6 @@ CONFIG_RAS=y
 # Android
 #
 # CONFIG_ANDROID is not set
-# end of Android
 
 # CONFIG_DAX is not set
 CONFIG_NVMEM=y
@@ -5626,7 +5491,6 @@ CONFIG_NVMEM_STM32_ROMEM=y
 #
 # CONFIG_STM is not set
 # CONFIG_INTEL_TH is not set
-# end of HW tracing support
 
 # CONFIG_FPGA is not set
 # CONFIG_FSI is not set
@@ -5637,7 +5501,6 @@ CONFIG_TEE=y
 #
 CONFIG_OPTEE=y
 CONFIG_OPTEE_SHM_NUM_PRIV_PAGES=1
-# end of TEE drivers
 
 CONFIG_PM_OPP=y
 # CONFIG_SIOX is not set
@@ -5647,7 +5510,6 @@ CONFIG_COUNTER=y
 CONFIG_STM32_TIMER_CNT=y
 CONFIG_STM32_LPTIMER_CNT=y
 # CONFIG_FTM_QUADDEC is not set
-# end of Device Drivers
 
 #
 # File systems
@@ -5701,14 +5563,12 @@ CONFIG_OVERLAY_FS_REDIRECT_ALWAYS_FOLLOW=y
 # Caches
 #
 # CONFIG_FSCACHE is not set
-# end of Caches
 
 #
 # CD-ROM/DVD Filesystems
 #
 # CONFIG_ISO9660_FS is not set
 # CONFIG_UDF_FS is not set
-# end of CD-ROM/DVD Filesystems
 
 #
 # DOS/FAT/NT Filesystems
@@ -5722,7 +5582,6 @@ CONFIG_FAT_DEFAULT_IOCHARSET="iso8859-1"
 CONFIG_NTFS_FS=y
 # CONFIG_NTFS_DEBUG is not set
 # CONFIG_NTFS_RW is not set
-# end of DOS/FAT/NT Filesystems
 
 #
 # Pseudo filesystems
@@ -5738,7 +5597,6 @@ CONFIG_TMPFS_POSIX_ACL=y
 CONFIG_TMPFS_XATTR=y
 CONFIG_MEMFD_CREATE=y
 CONFIG_CONFIGFS_FS=y
-# end of Pseudo filesystems
 
 CONFIG_MISC_FILESYSTEMS=y
 # CONFIG_ORANGEFS_FS is not set
@@ -5892,7 +5750,6 @@ CONFIG_NLS_ISO8859_1=y
 CONFIG_NLS_UTF8=y
 # CONFIG_DLM is not set
 # CONFIG_UNICODE is not set
-# end of File systems
 
 #
 # Security options
@@ -5924,9 +5781,6 @@ CONFIG_LSM="lockdown,yama,loadpin,safesetid,integrity"
 CONFIG_INIT_STACK_NONE=y
 # CONFIG_INIT_ON_ALLOC_DEFAULT_ON is not set
 # CONFIG_INIT_ON_FREE_DEFAULT_ON is not set
-# end of Memory initialization
-# end of Kernel hardening options
-# end of Security options
 
 CONFIG_CRYPTO=y
 
@@ -6110,7 +5964,6 @@ CONFIG_SYSTEM_TRUSTED_KEYS=""
 # CONFIG_SYSTEM_EXTRA_CERTIFICATE is not set
 # CONFIG_SECONDARY_TRUSTED_KEYRING is not set
 # CONFIG_SYSTEM_BLACKLIST_KEYRING is not set
-# end of Certificates for signature checking
 
 CONFIG_BINARY_PRINTF=y
 
@@ -6214,7 +6067,6 @@ CONFIG_FONT_8x16=y
 CONFIG_SG_POOL=y
 CONFIG_SBITMAP=y
 # CONFIG_STRING_SELFTEST is not set
-# end of Library routines
 
 #
 # Kernel hacking
@@ -6230,7 +6082,6 @@ CONFIG_CONSOLE_LOGLEVEL_QUIET=4
 CONFIG_MESSAGE_LOGLEVEL_DEFAULT=4
 # CONFIG_BOOT_PRINTK_DELAY is not set
 CONFIG_DYNAMIC_DEBUG=y
-# end of printk and dmesg options
 
 #
 # Compile-time checks and compiler options
@@ -6251,7 +6102,6 @@ CONFIG_OPTIMIZE_INLINING=y
 CONFIG_DEBUG_SECTION_MISMATCH=y
 # CONFIG_SECTION_MISMATCH_WARN_ONLY is not set
 # CONFIG_DEBUG_FORCE_WEAK_PER_CPU is not set
-# end of Compile-time checks and compiler options
 
 CONFIG_MAGIC_SYSRQ=y
 CONFIG_MAGIC_SYSRQ_DEFAULT_ENABLE=0x1
@@ -6282,7 +6132,6 @@ CONFIG_ARCH_HAS_DEBUG_VIRTUAL=y
 # CONFIG_DEBUG_HIGHMEM is not set
 CONFIG_CC_HAS_KASAN_GENERIC=y
 CONFIG_KASAN_STACK=1
-# end of Memory Debugging
 
 CONFIG_ARCH_HAS_KCOV=y
 CONFIG_CC_HAS_SANCOV_TRACE_PC=y
@@ -6295,7 +6144,6 @@ CONFIG_CC_HAS_SANCOV_TRACE_PC=y
 # CONFIG_SOFTLOCKUP_DETECTOR is not set
 # CONFIG_DETECT_HUNG_TASK is not set
 # CONFIG_WQ_WATCHDOG is not set
-# end of Debug Lockups and Hangs
 
 # CONFIG_PANIC_ON_OOPS is not set
 CONFIG_PANIC_ON_OOPS_VALUE=0
@@ -6323,7 +6171,6 @@ CONFIG_LOCK_DEBUGGING_SUPPORT=y
 # CONFIG_DEBUG_LOCKING_API_SELFTESTS is not set
 # CONFIG_LOCK_TORTURE_TEST is not set
 # CONFIG_WW_MUTEX_SELFTEST is not set
-# end of Lock Debugging (spinlocks, mutexes, etc...)
 
 CONFIG_STACKTRACE=y
 # CONFIG_WARN_ALL_UNSEEDED_RANDOM is not set
@@ -6343,7 +6190,6 @@ CONFIG_DEBUG_BUGVERBOSE=y
 CONFIG_RCU_CPU_STALL_TIMEOUT=21
 CONFIG_RCU_TRACE=y
 # CONFIG_RCU_EQS_DEBUG is not set
-# end of RCU Debugging
 
 # CONFIG_DEBUG_WQ_FORCE_RR_CPU is not set
 # CONFIG_DEBUG_BLOCK_EXT_DEVT is not set
@@ -6454,4 +6300,3 @@ CONFIG_DEBUG_LL_INCLUDE="mach/debug-macro.S"
 CONFIG_UNCOMPRESS_INCLUDE="debug/uncompress.h"
 # CONFIG_PID_IN_CONTEXTIDR is not set
 # CONFIG_CORESIGHT is not set
-# end of Kernel hacking

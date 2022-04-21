@@ -920,7 +920,7 @@ next:
 			if (!menu->sym && menu_is_visible(menu) &&
 			    menu != &rootmenu) {
 				str = menu_get_prompt(menu);
-				fprintf(out, "# end of %s\n", str);
+				// fprintf(out, "# end of %s\n", str);
 				need_newline = true;
 			}
 			if (menu->next) {
