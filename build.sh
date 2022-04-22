@@ -12,6 +12,41 @@ function usage()
     echo "  all  build dtbs modules and uImage"
     echo "  clean  clean all the object files along with the executable"
 }
+function runcmd()
+{
+    if [ $# -ne 1 ];then
+        echo "Usage: runcmd command_string"
+        exit 1
+    fi
+    echo "$1"
+    $1 || {
+        echo "failed"
+        exit 1
+    }
+}
+function cpfiles()
+{
+    if [ $# -ne 2 ];then
+        echo "Usage: cpfiles \"sourcefiles\" \"destdir\""
+        exit 1
+    fi
+
+    mkdir -p $2 || {
+        echo "mkdir -p $2 failed"
+        exit 1
+    }
+
+    for f in $1
+    do
+        if [ -a $f ];then
+            cp -af $f $2 || {
+                echo "cp -af $f $2 failed"
+                exit 1
+            }
+        fi
+    done
+    echo "cpfiles $1 $2"
+}
 
 function make_clean()
 {
@@ -23,7 +58,8 @@ function make_clean()
 function make_dtbs()
 {
     runcmd "make O=${BUILD_OUTPUT_PATH} dtbs -j${N}"
-    cp ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/stm32mp157d-atk*.dtb ${TARGET_BOOT_PATH}
+    runcmd "cp ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/*.dtb ${TARGET_BOOT_PATH}"  
+    dtc -I dtb -O dts ${TARGET_BOOT_PATH}/stm32mp157d-mmc-quickboot.dtb > ${TARGET_BOOT_PATH}/source_mmc-quickboot.dts
 }
 
 function make_uImage()
@@ -49,7 +85,7 @@ function make_all()
 {
     runcmd "make O=${BUILD_OUTPUT_PATH} uImage dtbs LOADADDR=0XC2000040 vmlinux -j${N}"
     cpfiles ${BUILD_OUTPUT_PATH}/arch/arm/boot/uImage ${TARGET_BOOT_PATH}
-    cp ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/stm32mp157d-atk*.dtb ${TARGET_BOOT_PATH}
+    runcmd "cp ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/*.dtb ${TARGET_BOOT_PATH}"
 
     make_modules
 }
@@ -74,12 +110,10 @@ if [ "$#" != 0 ] && ( ! echo "${build_type[@]}" | grep -wq "$cmd" );then
     usage
     exit 1
 fi
-source envsetup.sh || {
-    echo "envsetup.sh not exist"
+[ -n "$BUILD_OUTPUT_PATH" ] || {
+    echo "Please source envsetup.sh first"
+    exit 1
 }
-echo "KERNEL_DEFCONFIG=$KERNEL_DEFCONFIG"
-echo "BUILD_OUTPUT_PATH=$BUILD_OUTPUT_PATH"
-
 if [ x"$cmd" == x"clean" ];then
     echo "clean kernel workspace"
     make_clean
@@ -88,6 +122,8 @@ fi
 
 #first create .config
 runcmd "make O=${BUILD_OUTPUT_PATH} $KERNEL_DEFCONFIG -j${N}"
+rm -r ${TARGET_BOOT_PATH}
+mkdir ${TARGET_BOOT_PATH}
 
 if [ x"$cmd" == x"dtbs" ];then
     echo "===========make dtbs==============="

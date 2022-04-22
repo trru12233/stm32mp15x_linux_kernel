@@ -978,40 +978,49 @@ dtb-$(CONFIG_ARCH_STI) += \
 	stih410-b2120.dtb \
 	stih410-b2260.dtb \
 	stih418-b2199.dtb
-dtb-$(CONFIG_ARCH_STM32) += \
-	stm32f429-disco.dtb \
-	stm32f469-disco.dtb \
-	stm32f746-disco.dtb \
-	stm32f769-disco.dtb \
-	stm32429i-eval.dtb \
-	stm32746g-eval.dtb \
-	stm32h743i-eval.dtb \
-	stm32h743i-disco.dtb \
-	stm32mp157a-avenger96.dtb \
-	stm32mp157a-dk1.dtb \
-	stm32mp157d-dk1.dtb \
-	stm32mp157c-dk2.dtb \
-	stm32mp157f-dk2.dtb \
-	stm32mp157c-dk2-a7-examples.dtb \
-	stm32mp157c-dk2-m4-examples.dtb \
-	stm32mp157f-dk2-a7-examples.dtb \
-	stm32mp157f-dk2-m4-examples.dtb \
-	stm32mp157a-ed1.dtb \
-	stm32mp157c-ed1.dtb \
-	stm32mp157d-ed1.dtb \
-	stm32mp157f-ed1.dtb \
-	stm32mp157a-ev1.dtb \
-	stm32mp157c-ev1.dtb \
-	stm32mp157d-ev1.dtb \
-	stm32mp157f-ev1.dtb \
-	stm32mp157d-atk.dtb \
-    stm32mp157d-atk-mipi.dtb \
-	stm32mp157d-atk-hdmi.dtb \
-	stm32mp157d-atk-spdif.dtb \
-	stm32mp157c-ev1-a7-examples.dtb \
-	stm32mp157c-ev1-m4-examples.dtb \
-	stm32mp157f-ev1-a7-examples.dtb \
-	stm32mp157f-ev1-m4-examples.dtb
+ifdef CONFIG_MMC_QUICK_BOOT
+dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-mmc-quickboot.dtb
+else
+dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk.dtb
+dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk-mipi.dtb
+dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk-hdmi.dtb
+dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk-spdif.dtb
+endif
+
+# dtb-$(CONFIG_ARCH_STM32) += \
+# 	stm32f429-disco.dtb \
+# 	stm32f469-disco.dtb \
+# 	stm32f746-disco.dtb \
+# 	stm32f769-disco.dtb \
+# 	stm32429i-eval.dtb \
+# 	stm32746g-eval.dtb \
+# 	stm32h743i-eval.dtb \
+# 	stm32h743i-disco.dtb \
+# 	stm32mp157a-avenger96.dtb \
+# 	stm32mp157a-dk1.dtb \
+# 	stm32mp157d-dk1.dtb \
+# 	stm32mp157c-dk2.dtb \
+# 	stm32mp157f-dk2.dtb \
+# 	stm32mp157c-dk2-a7-examples.dtb \
+# 	stm32mp157c-dk2-m4-examples.dtb \
+# 	stm32mp157f-dk2-a7-examples.dtb \
+# 	stm32mp157f-dk2-m4-examples.dtb \
+# 	stm32mp157a-ed1.dtb \
+# 	stm32mp157c-ed1.dtb \
+# 	stm32mp157d-ed1.dtb \
+# 	stm32mp157f-ed1.dtb \
+# 	stm32mp157a-ev1.dtb \
+# 	stm32mp157c-ev1.dtb \
+# 	stm32mp157d-ev1.dtb \
+# 	stm32mp157f-ev1.dtb \
+# 	stm32mp157d-atk.dtb \
+#   stm32mp157d-atk-mipi.dtb \
+# 	stm32mp157d-atk-hdmi.dtb \
+# 	stm32mp157d-atk-spdif.dtb \
+# 	stm32mp157c-ev1-a7-examples.dtb \
+# 	stm32mp157c-ev1-m4-examples.dtb \
+# 	stm32mp157f-ev1-a7-examples.dtb \
+# 	stm32mp157f-ev1-m4-examples.dtb
 
 dtb-$(CONFIG_MACH_SUN4I) += \
 	sun4i-a10-a1000.dtb \

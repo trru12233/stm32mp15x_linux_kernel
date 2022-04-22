@@ -1,3 +1,8 @@
+如何编译
+============
+source envsetup.sh
+./build.sh [dtbs | all | modules | image | clean]
+
 Linux kernel
 ============
 

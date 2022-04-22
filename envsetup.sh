@@ -1,43 +1,30 @@
 #!/bin/bash
-
-function runcmd()
+function gettop
 {
-    if [ $# -ne 1 ];then
-        echo "Usage: runcmd command_string"
-        exit 1
-    fi
-    echo "$1"
-    $1 || {
-        echo "failed"
-        exit 1
-    }
-}
-function cpfiles()
-{
-    if [ $# -ne 2 ];then
-        echo "Usage: cpfiles \"sourcefiles\" \"destdir\""
-        exit 1
-    fi
-
-    mkdir -p $2 || {
-        echo "mkdir -p $2 failed"
-        exit 1
-    }
-
-    for f in $1
-    do
-        if [ -a $f ];then
-            cp -af $f $2 || {
-                echo "cp -af $f $2 failed"
-                exit 1
-            }
+    local TOPFILE=envsetup.sh
+    if [ -f $TOPFILE ] ; then
+        PWD= /bin/pwd
+    else
+        local HERE=$PWD
+        local T=
+        while [ \( ! \( -f $TOPFILE \) \) -a \( $PWD != "/" \) ]; do
+            \cd ..
+            T=`PWD= /bin/pwd -P`
+        done
+        \cd $HERE
+        if [ -f "$T/$TOPFILE" ]; then
+            echo $T
         fi
-    done
-    echo "cpfiles $1 $2"
+    fi
 }
+export TOPDIR=$(gettop)
+
 export N=$(( ($(cat /proc/cpuinfo |grep 'processor'|wc -l)) ))
-export BUILD_OUTPUT_PATH=$(pwd)/out
+export BUILD_OUTPUT_PATH=${TOPDIR}/out
 export TARGET_MODULES_PATH=${BUILD_OUTPUT_PATH}/_modules
 export TARGET_BOOT_PATH=${BUILD_OUTPUT_PATH}/_boot
 export TARGET_BOOT_EXT4_PATH=${BUILD_OUTPUT_PATH}/_boot_ext4
 export KERNEL_DEFCONFIG=stm32mp1_mmc_defconfig
+
+echo "KERNEL_DEFCONFIG=$KERNEL_DEFCONFIG"
+echo "BUILD_OUTPUT_PATH=$BUILD_OUTPUT_PATH"
