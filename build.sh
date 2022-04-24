@@ -57,9 +57,10 @@ function make_clean()
 
 function make_dtbs()
 {
+    runcmd "rm -r ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/"
     runcmd "make O=${BUILD_OUTPUT_PATH} dtbs -j${N}"
     runcmd "cp ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/*.dtb ${TARGET_BOOT_PATH}"  
-    dtc -I dtb -O dts ${TARGET_BOOT_PATH}/stm32mp157d-mmc-quickboot.dtb > ${TARGET_BOOT_PATH}/source_mmc-quickboot.dts
+    dtc -I dtb -O dts ${TARGET_BOOT_PATH}/stm32mp157d-atk.dtb > ${TARGET_BOOT_PATH}/source_atk.dts
 }
 
 function make_uImage()

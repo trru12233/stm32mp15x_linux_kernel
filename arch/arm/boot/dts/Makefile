@@ -978,14 +978,10 @@ dtb-$(CONFIG_ARCH_STI) += \
 	stih410-b2120.dtb \
 	stih410-b2260.dtb \
 	stih418-b2199.dtb
-ifdef CONFIG_MMC_QUICK_BOOT
-dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-mmc-quickboot.dtb
-else
 dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk.dtb
 dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk-mipi.dtb
 dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk-hdmi.dtb
 dtb-$(CONFIG_ARCH_STM32)  += stm32mp157d-atk-spdif.dtb
-endif
 
 # dtb-$(CONFIG_ARCH_STM32) += \
 # 	stm32f429-disco.dtb \
