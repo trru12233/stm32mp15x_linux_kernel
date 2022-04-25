@@ -1,23 +1,11 @@
-如何编译
-============
-source envsetup.sh
-./build.sh [dtbs | all | modules | image | clean]
+STM32MP157 Linux kernel工程
+==========
+编译方法
+------------
+    $ source envsetup.sh
+	$ ./build.sh [dtbs | all | modules | image | clean]
+	
 
-Linux kernel
-============
+默认的内核设置：arch/arm/configs/stm32mp1_mmc_defconfig
 
-There are several guides for kernel developers and users. These guides can
-be rendered in a number of formats, like HTML and PDF. Please read
-Documentation/admin-guide/README.rst first.
-
-In order to build the documentation, use ``make htmldocs`` or
-``make pdfdocs``.  The formatted documentation can also be read online at:
-
-    https://www.kernel.org/doc/html/latest/
-
-There are various text files in the Documentation/ subdirectory,
-several of them using the Restructured Text markup notation.
-
-Please read the Documentation/process/changes.rst file, as it contains the
-requirements for building and running the kernel, and information about
-the problems which may result by upgrading your kernel.
+使用的设备树：arch/arm/boot/dts/stm32mp157d-atk.dtb
