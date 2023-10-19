@@ -1,6 +1,11 @@
 #!/bin/bash
 
 build_type=("dtbs" "all" "modules" "image" "clean")
+INFODIVIDER="\
+###############################################################################\
+";
+. envsetup.sh || exit 1
+start_log
 
 function usage()
 {
@@ -12,41 +17,6 @@ function usage()
     echo "  all  build dtbs modules and uImage"
     echo "  clean  clean all the object files along with the executable"
 }
-function runcmd()
-{
-    if [ $# -ne 1 ];then
-        echo "Usage: runcmd command_string"
-        exit 1
-    fi
-    echo "$1"
-    $1 || {
-        echo "failed"
-        exit 1
-    }
-}
-function cpfiles()
-{
-    if [ $# -ne 2 ];then
-        echo "Usage: cpfiles \"sourcefiles\" \"destdir\""
-        exit 1
-    fi
-
-    mkdir -p $2 || {
-        echo "mkdir -p $2 failed"
-        exit 1
-    }
-
-    for f in $1
-    do
-        if [ -a $f ];then
-            cp -af $f $2 || {
-                echo "cp -af $f $2 failed"
-                exit 1
-            }
-        fi
-    done
-    echo "cpfiles $1 $2"
-}
 
 function make_clean()
 {
@@ -57,20 +27,29 @@ function make_clean()
 
 function make_dtbs()
 {
+    echo $INFODIVIDER
+    echo "# make dtb"
+    echo $INFODIVIDER
     runcmd "rm -r ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/"
     runcmd "make O=${BUILD_OUTPUT_PATH} dtbs -j${N}"
-    runcmd "cp ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/*.dtb ${TARGET_BOOT_PATH}"  
-    dtc -I dtb -O dts ${TARGET_BOOT_PATH}/stm32mp157d-atk.dtb > ${TARGET_BOOT_PATH}/source_atk.dts
+    runcmd "cp ${BUILD_OUTPUT_PATH}/arch/arm/boot/dts/*.dtb ${TARGET_BOOT_PATH}"
+    runcmd "dtc -I dtb -O dts ${TARGET_BOOT_PATH}/stm32mp157d-atk.dtb > ${TARGET_BOOT_PATH}/source_atk.dts"
 }
 
 function make_uImage()
 {
+    echo $INFODIVIDER
+    echo "# make uImage"
+    echo $INFODIVIDER
     runcmd "make O=${BUILD_OUTPUT_PATH} uImage LOADADDR=0XC2000040 -j${N}"
     cpfiles ${BUILD_OUTPUT_PATH}/arch/arm/boot/uImage ${TARGET_BOOT_PATH}
 }
 
 function make_modules()
 {
+    echo $INFODIVIDER
+    echo "# make kernel modules"
+    echo $INFODIVIDER
     runcmd "make O=${BUILD_OUTPUT_PATH} modules -j${N}"
     runcmd "make O=${BUILD_OUTPUT_PATH} modules_install INSTALL_MOD_STRIP=1 INSTALL_MOD_PATH=${TARGET_MODULES_PATH} -j${N}"
 
@@ -92,16 +71,17 @@ function make_all()
 }
 function package_bootfs()
 {
-    echo "******************************"
-    echo "Start package uImage and device-trees"
-    rm ${TARGET_BOOT_EXT4_PATH}
+    echo $INFODIVIDER
+    echo "# Start package uImage and device-trees to bootfs.ext4"
+    echo $INFODIVIDER
+
+    rm -r ${TARGET_BOOT_EXT4_PATH}
     mkdir ${TARGET_BOOT_EXT4_PATH}
     cp ${TARGET_BOOT_PATH}/*.dtb ${TARGET_BOOT_EXT4_PATH}
     cp ${TARGET_BOOT_PATH}/uImage ${TARGET_BOOT_EXT4_PATH}
     cp -r lcd_bmp/* ${TARGET_BOOT_EXT4_PATH}
     cp -r ${TARGET_MODULES_PATH}/lib/modules/* ${TARGET_BOOT_EXT4_PATH}
     runcmd "make_ext4fs -L bootfs -l 67108864 ${TARGET_BOOT_EXT4_PATH}/bootfs.ext4 ${TARGET_BOOT_EXT4_PATH}"
-    echo "******************************"
     echo "Create ext4 Filesystem Success"
     echo "${TARGET_BOOT_EXT4_PATH}/bootfs.ext4 = `ls -lh ${TARGET_BOOT_EXT4_PATH}/bootfs.ext4 | awk '{print $5}'`"
 }
@@ -141,7 +121,7 @@ else
 fi
 
 
-echo "******************************"
-echo "       build OK !!!"
-echo "******************************"
+echo $INFODIVIDER
+echo "# Build OK !!!"
+echo $INFODIVIDER
 echo ">>File: uImage= `ls -lh ${TARGET_BOOT_PATH}/uImage | awk '{print $5}'`"
